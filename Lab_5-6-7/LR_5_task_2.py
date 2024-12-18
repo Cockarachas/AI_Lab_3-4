@@ -5,7 +5,7 @@ import sklearn.metrics as sm
 import matplotlib.pyplot as plt
 
 # Вхідний файл, який містить дані
-input_file = 'data_singlevar_regr.txt'
+input_file = 'data_regr_3.txt'
 # Завантаження даних
 data = np.loadtxt(input_file, delimiter=',')
 X, y = data[:, :-1], data[:, -1]
@@ -42,7 +42,7 @@ round(sm.explained_variance_score(y_test, y_test_pred), 2))
 print("R2 score =", round(sm.r2_score(y_test, y_test_pred), 2))
 
 # Файл для збереження моделі
-output_model_file = 'model.pkl'
+output_model_file = '../model.pkl'
 # Збереження моделі
 with open(output_model_file, 'wb') as f:
     pickle.dump(regressor, f)
